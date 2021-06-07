@@ -1,24 +1,50 @@
-
-.header{
-    display: flex;
-    margin: 25px ; 
-    margin-left: 90px;
-    justify-content: center;
-}
-.title{
-       text-align: center;
-       border : 1px solid red;
-       background-color: yellow;
-       border-radius: 10%;
+h1 {
+    font-size: 1.5rem;
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: aliceblue;
+    box-shadow: 3px 3px 2px rgb(52, 70, 70) ;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    opacity: 0.5;
 }
 .image {
-    width: 48px;
-    height:48px;
-    margin-left: 25px;
+    width: 40px;
+    margin-left: auto;
+    margin-right: auto;
+   
+
+}
+.label {
+    background-color: burlywood;
+    display: block;
+    width: 200px;
 }
 
-.calendar{
-    margin-left: 45px;
-    padding: 5px 0;
+}
+.input {
+    width: 900px;
+  
+}
+.form {
+    display: flex;
+    flex-direction: row;
+}
+.form-control {
+    margin-top: 5px;
+    margin-bottom: 4px;
+}
+#nav0{
+    box-shadow: 3px 3px 2px rgb(52, 70, 70) ;
+}
 
+#nav{
+    box-shadow: 3px 3px 2px  #ffc107;
+}
+#nav1{
+    box-shadow: 3px 3px 2px  #198754;
+}
+footer {
+    box-shadow: 3px 3px 2px rgb(52, 70, 70) ;
 }
