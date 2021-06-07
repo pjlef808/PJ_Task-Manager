@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <!--  jQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- Bootstrap Date-Picker Plugin -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <header class='header'>
+        <h1 class="title">Tasks  &copy</h1>
+           <img class="image" src="/css/images/checked.png" alt="Icon">
+        
+    </header>
+    <div class="container">
+
+        <nav class="navbar navbar-expand-sm navbar-light bg-light">
+       
+        
+          <img class= "image" src="./css/images/Users.png" alt="">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">About us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link to Cards</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              
+            </ul>
+            
+          </div>
+         </div>
+      </nav>
+
+      <!-- start -->
+
+      <section class="border border-primary m-3 p-2">
+        <h5 class="bg-primary p-2 text-light"> Tasks - New</h5>
+        <div class="row g-3 p-2">
+            <div class="col-sm">
+              <label class="control-label" for="task">Task </label>  
+              <input type="text" class="form-control" placeholder="Task" aria-label="Task ">
+            </div>
+            <div class="col-sm-9">
+              <label class="control-label" for="taskDesc">Task Description</label>
+            <input type="text" class="form-control" placeholder="Task Description" aria-label="Task Description">
+            </div>
+        </div>
+
+        <div class="row p-2">
+            <div class="col-sm-3">  
+            <label class="control-label" for="status">Status</label>
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  Status
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Separated link</a></li>
+                </ul> 
+            </div>
+            </div>
+
+            <div class="col-sm-7">
+              <label class="control-label" for="assignTo">Assigned To</label>
+              <input type="text" class="form-control" placeholder="Assigned To" aria-label="Assigned To">
+            </div>
+
+                 <!-- new  -->
+                 <!-- <div class="col-md-6 col-sm-6 col-xs-12"> -->
+                 <div class="col-md col-sm col-xs-12">  
+
+                  <!-- Form code begins -->
+                  <form method="post">
+                    <div class="form-group"> <!-- Date input -->
+                      <label class="control-label" for="date">Date</label>
+                      <input class="form-control" id="date" name="date" placeholder="DD/MM/YYYY" type="text"/>
+                    </div>
+
+                    <div class="d-grid p-2 d-md-flex justify-content-md-end">
+                      <button class="btn btn-primary me-md-0" name="submit" type="button">Submit</button>
+                    </div>
+
+                   </form>
+
+                   <script>
+                    $(document).ready(function(){
+                      var date_input=$('input[name="date"]'); //our date input has the name "date"
+                      var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+                      var options={
+                        format: 'dd/mm/yyyy',
+                        container: container,
+                        todayHighlight: true,
+                        autoclose: true,
+                      };
+                      date_input.datepicker(options);
+                    })
+                </script>
+                   <!-- Form code ends --> 
+                 <!-- new end -->
+            <!-- date picker end  -->
+        </div>
+       </section>
+
+      <!-- end -->
+          
+                <section class="border border-secondary m-3 p-2">
+                  <h5 class="bg-warning p-2"> Tasks - In Progress</h5>
+                    <div class="row mx-3 d-flex justify-content-between">
+                          <div class="card text-dark " style="width: 18rem;">
+                              <div class="card-header   my-1 ">TaskA</div>
+                              <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse maxime, aliquid officiis ullam quasi laudantium animi excepturi quod voluptatum laborum provident nesciunt expedita non aspernatur alias sunt et! Officiis, provident.</p>
+                              <ul class="list-group list-group-flush">
+                              <li class="list-group-item">Assigned To</li>
+                              <li class="list-group-item">Date Created</li>
+                              <li class="list-group-item">Date Due</li>
+                              </ul>
+                          </div>
+
+                          <div class="card text-dark " style="max-width: 18rem;">
+                              <div class="card-header my-1">TaskB</div>
+                              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam praesentium quos adipisci cum illum sint, quae accusamus distinctio, a obcaecati magni rerum numquam libero maxime qui? Fuga eaque veniam sit!</p>
+                              <ul class="list-group list-group-flush">
+                              <li class="list-group-item">Assigned To</li>
+                              <li class="list-group-item">Date Created</li>
+                              <li class="list-group-item">Date Due</li>
+                              </ul>
+                          </div>
+
+                          <div class="card text-dark " style="max-width: 18rem;">
+                              <div class="card-header my-1">TaskC</div>
+                              <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam, eum, in nesciunt vero quo repellat ex quod unde perferendis impedit, facilis ut quibusdam! Iste consequuntur, nemo in quibusdam maiores officiis.</p>
+                              <ul class="list-group list-group-flush">
+                              <li class="list-group-item">Assigned To</li>
+                              <li class="list-group-item">Date Created</li>
+                              <li class="list-group-item">Date Due</li>
+                              </ul>
+                          </div>
+
+                          <div class="card text-dark " style="max-width: 18rem;">
+                              <div class="card-header my-1">TaskD</div>
+                              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae placeat natus magni ad, eaque dolores! Id iusto asperiores amet excepturi corporis culpa debitis impedit adipisci quasi autem, laudantium nulla veniam?</p>
+                              <ul class="list-group list-group-flush">
+                              <li class="list-group-item">Assigned To</li>
+                              <li class="list-group-item">Date Created</li>
+                              <li class="list-group-item">Date Due</li>
+                              </ul>
+                          </div>
+                  </div>
+                </section>  
+
+                <section class="border border-primary mx-3 p-2" >
+                  <h5 class="bg-success text-light p-2">Tasks - Completed</h5>
+                    <div class="row mx-3 d-flex justify-content-between" >
+                      <div class="card" style="max-width: 18rem;">
+                        <div class="card-header   my-1">TaskE</div>
+                        <p class="card-text "> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat error natus neque perspiciatis aliquid accusantium ea fugit accusamus nulla, a velit iusto harum dolores voluptatem veritatis repellat eos esse veniam. </p>
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item">Assigned To</li>
+                          <li class="list-group-item">Date Created</li>
+                          <li class="list-group-item">Date Completed</li>
+                        </ul>
+                    </div>
+
+                        <div class="card " style="max-width: 18rem;">
+                            <div class="card-header text-dark my-1">TaskF</div>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, deserunt eos soluta rerum quo molestiae animi. Quo ratione ipsa sint sit cum, tenetur itaque natus iusto quia voluptates quis quisquam.</p>
+                            <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Assigned To</li>
+                            <li class="list-group-item">Date Created</li>
+                            <li class="list-group-item">Date Completed</li>
+                            </ul>
+                        </div>
+
+                        <div class="card " style="max-width: 18rem;">
+                            <div class="card-header text-dark my-1">TaskG</div>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia ex id, cum porro pariatur labore exercitationem placeat cumque quis laborum facere doloremque odio animi nostrum ducimus autem sit illo officia.</p>
+                            <ul class="list-group list-group-flush"></ul>
+                            <li class="list-group-item">Assigned To</li>
+                            <li class="list-group-item">Date Created</li>
+                            <li class="list-group-item">Date Completed</li>
+                            </ul>
+                        </div>
+
+                        <div class="card" style="max-width: 18rem;">
+                            <div class="card-header text-dark my-1">TaskH</div>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui soluta recusandae rerum exercitationem, dicta debitis nam, dignissimos enim dolore rem numquam odit asperiores possimus vero laudantium optio, quidem suscipit. Consequatur!</p>
+                            <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Assigned To</li>
+                            <li class="list-group-item">Date Created</li>
+                            <li class="list-group-item">Date Completed</li>
+                            </ul>
+                        </div>
+                      </div>  
+                </section>
+
+              </div>
+
+              <footer class="container bg-light py-1 my-5">
+                <p class="float-end"><a href="#">Back to top</a></p>
+                <p>&copy; 2021 PJ Task Manager &middot;
+                  <a href="">Home</a> &middot;</a>
+                </p>
+
+              </footer>
+
+              <script src="/assets/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+              
